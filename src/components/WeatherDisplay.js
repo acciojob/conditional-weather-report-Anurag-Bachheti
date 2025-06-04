@@ -1,31 +1,18 @@
 import React, { useState } from 'react'
 
-function WeatherDisplay() {
-
-  const weatherList = [
-    { temperature: 25, conditions: "Sunny" },
-    { temperature: 15, conditions: "Windy" },
-    { temperature: 35, conditions: "Hot" }
-  ]
+function WeatherDisplay({weather}) {
+  const tempStyle = {
+    color: weather.temperature > 20 ? 'red' : 'blue'
+  };
 
   return (
     <div>
-      {
-        weatherList.map((weather, index) => {
-          const tempStyle = {
-            color: weather.temperature > 20 ? 'blue' : 'red'
-          };
-          return (
-            <div key={index}>
-              <span>
-                <p style={tempStyle}>Temperature:{weather.temperature}</p>
-              </span>
-              <p>Conditions: {weather.conditions}</p>
-            </div>)
-        })
-      }
+      <p>
+        Temperature: <span style={tempStyle}> {weather.temperature}°C</span>
+      </p>
+      <p>Conditions: {weather.conditions}</p>
     </div>
-  )
+  );
 }
 
 export default WeatherDisplay
