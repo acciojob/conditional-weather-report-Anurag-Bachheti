@@ -3,14 +3,14 @@ import './../styles/App.css';
 import WeatherDisplay from "./WeatherDisplay";
 
 const App = () => {
-  const [weather, setWeather] = useState({
+  const [weatherData, setWeatherData] = useState({
     temperature: 25,
     conditions: "Sunny"
   });
   
   return (
     <div>
-        <WeatherDisplay weather={weather}/>
+        <WeatherDisplay weather={weatherData}/>
     </div>
   )
 }
