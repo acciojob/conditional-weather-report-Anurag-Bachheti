@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 
-function WeatherDisplay({weather}) {
-  const tempStyle = {
-    color: weather.temperature > 20 ? 'red' : 'blue'
+const WeatherDisplay = ({ weather }) => {
+  const temperatureStyle = {
+    color: weather.temperature > 20 ? "red" : "blue"
   };
 
   return (
     <div>
       <p>
-        Temperature: <span style={tempStyle}> {weather.temperature}°C</span>
+        Temperature: <span style={temperatureStyle}>{weather.temperature}</span>
       </p>
       <p>Conditions: {weather.conditions}</p>
     </div>
   );
-}
+};
 
 export default WeatherDisplay

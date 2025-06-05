@@ -3,24 +3,16 @@ import './../styles/App.css';
 import WeatherDisplay from "./WeatherDisplay";
 
 const App = () => {
-  const [weatherDataList, setWeatherDataList] = useState([
-    {
-      temperature: 25,
-      conditions: "Sunny"
-    },
-    {
-      temperature: 15,
-      conditions: "Windy"
-    }
-  ]);
+  const [weatherData] = useState({
+    temperature: 25,
+    conditions: "Sunny"
+  });
 
   return (
     <div>
-      {weatherDataList.map((weather, index) => (
-        <WeatherDisplay key={index} weather={weather} />
-      ))}
+      <WeatherDisplay weather={weatherData} />
     </div>
-  )
-}
+  );
+};
 
 export default App
